@@ -47,6 +47,13 @@ public class staticKeyword {
 		System.out.println(staticKeyword.num);
 		test();
 		test(1);
+		main();
+	}
+	
+	static void main() {
+		staticKeyword obj = new staticKeyword();
+		obj.print();
+		System.out.println("Second main method");
 	}
 }
 
