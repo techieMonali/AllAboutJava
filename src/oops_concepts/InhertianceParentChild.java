@@ -1,14 +1,25 @@
 package oops_concepts;
 
-public class InhertianceParentChild {
+/*
+ * two ways to build inheritance
+ * 1.extends
+ * 2.implements
+ */
+
+interface inheritance{
+	String msg="Welcome";
+}
+
+
+public class InhertianceParentChild implements inheritance{
 
 	void print() {
-		System.out.println("This is Parent");
+		System.out.println("This is Parent "+msg);
 	}
 
 }
 
-//single inheritance
+//single inheritance parent->child
 class child extends InhertianceParentChild {
 	int num = 10;
 	/*
@@ -21,11 +32,12 @@ class child extends InhertianceParentChild {
 		 */
 		child cObj = new child();
 		cObj.print();
+		
 	}
 
 }
 
-//multilevel inheritance
+//multilevel inheritance parent->child->otherChild
 class otherChild extends child {
 
 	void print() {
@@ -42,7 +54,7 @@ class otherChild extends child {
 
 }
 
-//Hierarchical inheritance
+//Hierarchical inheritance parent->teen
 class teen extends InhertianceParentChild {
 
 	void print() {
