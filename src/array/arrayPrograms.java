@@ -53,8 +53,7 @@ public class arrayPrograms {
 	
 
 	// multi-dimentional array
-	static void mltdmnlArr() {
-		int[][] arr = {{5,6},{23,64},{1,2},{12,34}};
+	static void mltdmnlArr(int arr[][]) {
 		
 		/*
 		5  6
@@ -91,7 +90,15 @@ public class arrayPrograms {
 
 	public static void main(String[] args) {
 		int arr[] = { 10, 5, 20, 43, 12 };
+		
 		sort(arr);
+		//way to pass array as a argument
+		mltdmnlArr(new int[][] {{5,6},{23,64},{1,2},{12,34}});
+		
+		//return new int[] {};
+		
+		
+		
 		// ArrayIndexOutOfBoundsException scenario(negative index and when index value
 		// is more than array size)
 		try {
@@ -107,7 +114,7 @@ public class arrayPrograms {
 			System.out.println(e.getLocalizedMessage());
 		}
 		
-		mltdmnlArr();
+		
 	}
 
 }

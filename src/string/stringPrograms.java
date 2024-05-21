@@ -275,10 +275,48 @@ public class stringPrograms {
 		System.out.println(str1);
 	}
 	
+	/*
+	 * print
+	 * 1234*
+	 * 123*5
+	 * 12*45
+	 * 1*345
+	 * *2345
+	 */
+	static void printFormat() {
+		String str1="12345";
+		
+		for(int i=str1.length()-1;i>=0;i--) {
+			System.out.println(str1.replace(str1.charAt(i), '*'));
+		}
+	}
 	
+	/*
+	 * print
+	 * 1
+	 * 23
+	 * 456
+	 * 78910
+	 */
+	static void printPyramid() {
+		int numRows = 4;
+		int numCols = 4;
+		int cnt = 1;
+		
+		for(int i=1;i<5;i++) {
+			for(int j=1;j<=i;j++) {
+					System.out.print(cnt);
+					cnt++;
+					if(j==i) {
+						System.out.println();
+					}
+			}
+		}
+		
+	}
 	
 	public static void main(String[] args) {
-		stringReverse();
+		/*stringReverse();
 		checkPalindrome();
 		StringToInt();
 		intToString();
@@ -293,6 +331,8 @@ public class stringPrograms {
 		wordOccurence();
 		vowelCnt();
 		stringSwap();
+		printFormat();*/
+		printPyramid();
 	}
 
 }
