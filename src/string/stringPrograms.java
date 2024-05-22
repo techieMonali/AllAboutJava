@@ -26,7 +26,6 @@ public class stringPrograms {
 	
 	static void checkPalindrome() {
 		String str = "nitin";
-		String str1 ="0120";
 		int cnt=1;
 		//one way
 		for(int i=0;i<str.length()/2;i++) {
@@ -221,7 +220,6 @@ public class stringPrograms {
 	static void wordOccurence() {
 		String str = "hello hey hello how are you.you look good";
 		String regex = "[. ]";
-		int cnt=1;
 		String []arr = str.split(regex);
 		
 		HashMap<String,Integer> hshMap = new HashMap<String,Integer>();
@@ -291,32 +289,10 @@ public class stringPrograms {
 		}
 	}
 	
-	/*
-	 * print
-	 * 1
-	 * 23
-	 * 456
-	 * 78910
-	 */
-	static void printPyramid() {
-		int numRows = 4;
-		int numCols = 4;
-		int cnt = 1;
-		
-		for(int i=1;i<5;i++) {
-			for(int j=1;j<=i;j++) {
-					System.out.print(cnt);
-					cnt++;
-					if(j==i) {
-						System.out.println();
-					}
-			}
-		}
-		
-	}
+	
 	
 	public static void main(String[] args) {
-		/*stringReverse();
+		stringReverse();
 		checkPalindrome();
 		StringToInt();
 		intToString();
@@ -331,8 +307,7 @@ public class stringPrograms {
 		wordOccurence();
 		vowelCnt();
 		stringSwap();
-		printFormat();*/
-		printPyramid();
+		printFormat();
 	}
 
 }
