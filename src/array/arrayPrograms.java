@@ -169,8 +169,27 @@ public class arrayPrograms {
 		}
 		System.out.println(sum);
 	}
+	
+	/*
+	 * Input array {0,9,1,3,2,7,6,5,8} Pairs with sum as 8 Output pairs - [0,8],[1,7],[2,6], [3,5]
+	 */
+	static void sumEight() {
+		int arr[] = { 0, 9, 1, 3, 2, 7, 6, 5, 8 };
+
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = i; j < arr.length; j++) {
+				int a = arr[i];
+				int b = arr[j];
+				if (Integer.sum(a, b) == 8) {
+					System.out.println("[" + a + "," + b + "]");
+				}
+			}
+		}
+	}
+
 
 	public static void main(String[] args) {
+		sumEight();
 		add();
 		countApprnc();
 		int arr[] = { 10, 5, 20, 43, 12 };
