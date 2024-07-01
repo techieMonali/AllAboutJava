@@ -3,6 +3,7 @@ package collection;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ListInterface {
@@ -46,6 +47,9 @@ public class ListInterface {
 	
 		Object[] arr = intList.toArray();
 		System.out.println("After coverting into arrat:"+arr[0]);
+		
+		LinkedList<Character> lList = new LinkedList<>();
+		
 	}
 
 	static void objectList(ListInterface obj1, ListInterface obj2, ListInterface obj3) {
