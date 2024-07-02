@@ -316,6 +316,23 @@ public class stringPrograms {
 		if (stack.isEmpty())
 			System.out.println("\nBalanced Parentheses.");
 	}
+	
+	static void reverseWords() {
+		String str = "I am a tester";
+		
+		String strArr[] = str.split(" ");
+		String nwArr[];
+		
+		for(int i=0;i<strArr.length;i++) {
+			String word=strArr[i];
+			String nstr="";
+			for(int j=0;j<word.length();j++) {
+				nstr = word.charAt(j)+nstr;
+			}
+			System.out.print(nstr+" ");
+		}
+		
+	}
 
 
 	public static void main(String[] args) {
@@ -336,11 +353,13 @@ public class stringPrograms {
 		 vowelCnt();
 		 stringSwap();
 		 printFormat();
+		 reverseWords();
 		 
 		checkValidInvalid("{[()]}");
 		checkValidInvalid("{[]}()");
 		checkValidInvalid("{(])[");
 		checkValidInvalid("]()[]");
+		
 	}
 
 }

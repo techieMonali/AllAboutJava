@@ -2,9 +2,30 @@ package collection;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+
+class student implements Comparable<student>{
+	String name;
+	int age;
+	
+	student(String name, int age){
+		this.name=name;
+		this.age=age;
+	}
+
+	@Override
+	public int compareTo(student st) {
+		if (age == st.age)
+			return 0;
+		else if (age > st.age)
+			return 1;
+		else
+			return -1;
+	}
+}
 
 public class ListInterface {
 	int num;
@@ -46,10 +67,10 @@ public class ListInterface {
 		}
 	
 		Object[] arr = intList.toArray();
-		System.out.println("After coverting into arrat:"+arr[0]);
-		
-		LinkedList<Character> lList = new LinkedList<>();
-		
+		System.out.println("After coverting into array:");
+		for(Object obj:arr) {
+			System.out.println(obj);
+		}		
 	}
 
 	static void objectList(ListInterface obj1, ListInterface obj2, ListInterface obj3) {
@@ -74,6 +95,25 @@ public class ListInterface {
 		ListInterface obj3 = new ListInterface(92,"hey");
 		
 		objectList(obj1,obj2,obj3);
+		
+		/*
+		 * Accept student details and sort them by their age
+		 */
+		
+		ArrayList<student> studLst = new ArrayList<>();
+		studLst.add(new student("Ajay", 14));
+		studLst.add(new student("Vijay", 13));
+		studLst.add(new student("Sanjay", 15));
+		
+		System.out.println("*****List before*****");
+		for (student st : studLst) {
+			System.out.println(st.name + " " + st.age);
+		}  
+		System.out.println("*****List after*****");
+		Collections.sort(studLst);
+		for (student st : studLst) {
+			System.out.println(st.name + " " + st.age);
+		}  
 	}
 
 }
