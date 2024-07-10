@@ -1,5 +1,6 @@
 package array;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Set;
@@ -150,28 +151,29 @@ public class arrayPrograms {
 				hm.put(key, 1);
 			}
 		}
-		
+
 		Set<Integer> keys = hm.keySet();
-		
-		for(int key:keys) {
-			System.out.println(key+" : "+hm.get(key));
+
+		for (int key : keys) {
+			System.out.println(key + " : " + hm.get(key));
 		}
 	}
-	
+
 	/*
 	 * addition of all array elements
 	 */
 	static void add() {
-		int arr[]= {12,43,12,0,46};
+		int arr[] = { 12, 43, 12, 0, 46 };
 		int sum = 0;
-		for(int i = 0; i<arr.length;i++) {
-			sum+=arr[i];
+		for (int i = 0; i < arr.length; i++) {
+			sum += arr[i];
 		}
 		System.out.println(sum);
 	}
-	
+
 	/*
-	 * Input array {0,9,1,3,2,7,6,5,8} Pairs with sum as 8 Output pairs - [0,8],[1,7],[2,6], [3,5]
+	 * Input array {0,9,1,3,2,7,6,5,8} Pairs with sum as 8 Output pairs -
+	 * [0,8],[1,7],[2,6], [3,5]
 	 */
 	static void sumEight() {
 		int arr[] = { 0, 9, 1, 3, 2, 7, 6, 5, 8 };
@@ -187,21 +189,80 @@ public class arrayPrograms {
 		}
 	}
 
+	/*
+	 * input arr = (12,34,0,45,0,46,2,0,3,0,0)
+	 * output arr = (12,34,45,46,2,3,0,0,0,0,0)
+	 */
 
+	static void nonZeroEle() {
+		int arr[] = { 12, 34, 0, 45, 0, 46, 2, 0, 3, 0, 0 };
+
+		int nwArr[] = new int[arr.length];
+		int j = 0;
+		int cnt = arr.length - 1;
+
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == 0) {
+				nwArr[cnt] = arr[i];
+				cnt--;
+			} else {
+				nwArr[j] = arr[i];
+				j++;
+			}
+		}
+		for (int k : nwArr) {
+			System.out.println(k);
+		}
+	}
+	
+	/*
+	 * count number of times number has appeared
+	 * input arr = [2,2,1,2,1,4,5,5,6,8,9,8]
+	 * 
+key is 1 value is : 2
+key is 2 value is : 3
+key is 4 value is : 1
+key is 5 value is : 2
+key is 6 value is : 1
+key is 8 value is : 2
+key is 9 value is : 1
+	 * 
+	 */
+	static void cntNumTms() {
+		int arr[]= {2,2,1,2,1,4,5,5,6,8,9,8};
+		HashMap<Integer,Integer> hm = new HashMap<Integer,Integer>();
+		
+		for(int i = 0; i < arr.length; i++) {
+			int cnt = 0;
+			int key = arr[i];
+			for(int j = 0; j < arr.length; j++) {
+				if(arr[j] == key) {
+					cnt++;
+				}
+			}			
+			hm.put(key, cnt);
+		}
+		Set<Integer> keys = hm.keySet();
+		for(int key:keys) {
+			System.out.println("key is "+key+" value is : "+hm.get(key));
+		}
+	}
+	
+	
 	public static void main(String[] args) {
+		/*
 		sumEight();
 		add();
 		countApprnc();
 		int arr[] = { 10, 5, 20, 43, 12 };
 		addMatrics();
-		sort(arr);
-		// way to pass array as a argument
-		mltdmnlArr(new int[][] { { 5, 6 }, { 23, 64 }, { 1, 2 }, { 12, 34 } });
+		sort(arr); // way to pass array as a argument mltdmnlArr(new
+		int tD[][] = { { 5, 6 }, { 23, 64 }, { 1, 2 }, { 12, 34 } };
 
 		// return new int[] {};
 
-		// ArrayIndexOutOfBoundsException scenario(negative index and when index value
-		// is more than array size)
+		// ArrayIndexOutOfBoundsException scenario(negative index and when index
+		// value is more than array size)
 		try {
 			System.out.println("Testing array out of bound exception");
 			for (int j = 0; j < arr.length + 1; j++) {
@@ -214,7 +275,10 @@ public class arrayPrograms {
 		} catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println(e.getLocalizedMessage());
 		}
-
+		 
+		nonZeroEle();
+		*/
+		cntNumTms();
 	}
 
 }

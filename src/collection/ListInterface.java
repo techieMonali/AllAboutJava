@@ -3,9 +3,11 @@ package collection;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Deque;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 class student implements Comparable<student>{
 	String name;
@@ -114,6 +116,9 @@ public class ListInterface {
 		for (student st : studLst) {
 			System.out.println(st.name + " " + st.age);
 		}  
+		
+		Queue fq;
+		Deque dq;
 	}
 
 }

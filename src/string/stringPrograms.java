@@ -9,7 +9,61 @@ import java.util.regex.Pattern;
 import java.util.regex.*;
 
 public class stringPrograms {
+	
+	/*star pattern print
+	*
+	**
+	***
+	*/
+	
+	static void lftAlgnStr() {
+		char ch='*';
+		
+		for(int i=0;i<3;i++) {
+			for(int j=0;j<=i;j++) {
+				System.out.print(ch);
+			}
+			System.out.println("");
+		}
+	}
 
+	/*star pattern print
+	***
+	**
+	*
+	*/
+	static void upLftAlgnStr() {
+		char ch='*';
+		
+		for(int i=0;i<3;i++) {
+			for(int j=3;j>i;j--) {
+				System.out.print("*");
+			}
+			System.out.println("");
+		}
+	}
+	
+	/*star pattern print
+	  *
+	 **
+	***
+	*/
+	static void rghtAlgnStr() {
+		char ch='*';
+		
+		for(int i=0;i<3;i++) {
+			for (int j=2*(3-i); j>=0; j--)         
+			{  
+			//prints space between two stars      
+			System.out.print(" ");   
+			}   
+			for(int k=0;k<=i;k++) {
+				System.out.print("* ");
+			}
+			System.out.println("");
+		}
+	}
+	
 	static void stringReverse() {
 		String str = "hello, world!";
 
@@ -336,8 +390,10 @@ public class stringPrograms {
 
 
 	public static void main(String[] args) {
-		
-		 stringReverse();
+		rghtAlgnStr();
+		//lftAlgnStr();
+		/* 
+		 * stringReverse();
 		 checkPalindrome();
 		 StringToInt();
 		 intToString();
@@ -359,7 +415,7 @@ public class stringPrograms {
 		checkValidInvalid("{[]}()");
 		checkValidInvalid("{(])[");
 		checkValidInvalid("]()[]");
-		
+		*/
 	}
 
 }
