@@ -69,7 +69,7 @@ public class ListInterface {
 		arrList.clear();
 		System.out.println("Size of Arraylist : " + clnArLst.size());
 		System.out.println("Arraylist after clearning : " + arrList);
-
+		
 		// creating object list
 		ArrayList<Object> objArrList = new ArrayList<>();
 		objArrList.add(obj1);
