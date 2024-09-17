@@ -10,6 +10,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Spliterator;
 import java.util.TreeSet;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class QueueInterface implements Comparable<QueueInterface>{
 	int num;
@@ -130,6 +131,13 @@ public class QueueInterface implements Comparable<QueueInterface>{
 		while (qItr.hasNext()) {
 			System.out.println(qItr.next());
 		}
+	}
+	
+	private static void cncrntLQ(QueueInterface obj1, QueueInterface obj2) {
+		System.out.println("******************************Array Deque*********************************");
+		ConcurrentLinkedQueue<Integer> arrLst = new ConcurrentLinkedQueue<>();
+		arrLst.add(111);
+		arrLst.add(222);
 	}
 	
 	public static void main(String[] args) {
